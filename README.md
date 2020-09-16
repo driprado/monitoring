@@ -57,11 +57,6 @@ To monitor kubernetes we need to access the kubernetes API and other endpoints.
 
 
 
-
-
-
-
-
 ## Step-by-step guide
 
 
