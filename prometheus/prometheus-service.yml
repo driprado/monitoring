@@ -10,8 +10,7 @@ metadata:
 spec:
   selector:
     app: prometheus-server
-  type: NodePort
+  type: LoadBalancer
   ports:
-    - port: 32767
+    - port: 80
       targetPort: 9090
-      nodePort: 32767
