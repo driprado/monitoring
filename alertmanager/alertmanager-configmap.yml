@@ -1,0 +1,22 @@
+iapiVersion: v1
+kind: ConfigMap
+metadata:
+  name: alertmanager-conf
+  labels:
+    name: alertmanager-conf
+  namespace: monitoring
+data:
+  alertmanager.yml: |
+    global:
+      smtp_smarthost: 'localhost:25'
+      smtp_from: 'alertmanager@linuxacademy.org'
+      smtp_require_tls: false
+    route:
+      receiver: slack_receiver
+    receivers:
+    - name: slack_receiver
+      slack_configs:
+      - send_resolved: true
+        username: '<slack_username>'
+        api_url: '<webhook_url>'
+        channel: '<#slack_channel>'
